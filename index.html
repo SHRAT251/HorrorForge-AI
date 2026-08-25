@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Horror AI Prompt Kit</title>
+<title>HorrorForge AI | Horror Game Development Tools</title>
 
 <style>
 * {
@@ -18,147 +18,207 @@ html {
 body {
     margin: 0;
     background:
-        radial-gradient(circle at top, #241010 0%, #090909 45%);
-    color: #f2f2f2;
+        radial-gradient(circle at top, #241010 0%, #090909 42%);
+    color: #eeeeee;
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 
 .container {
-    max-width: 760px;
+    width: min(920px, calc(100% - 32px));
     margin: auto;
-    padding: 24px 16px 60px;
 }
 
-.card {
-    background: rgba(20,20,20,.94);
-    border: 1px solid #333;
-    border-radius: 20px;
-    padding: 28px 22px;
-    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+nav {
+    padding: 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #ff5555;
+}
+
+.nav-link {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.hero {
+    text-align: center;
+    padding: 75px 0 65px;
 }
 
 .badge {
     display: inline-block;
-    border: 1px solid #555;
+    border: 1px solid #593333;
+    background: #170d0d;
+    color: #ff8c8c;
     border-radius: 999px;
-    padding: 6px 12px;
-    color: #bbb;
-    font-size: 12px;
-    letter-spacing: .5px;
+    padding: 7px 14px;
+    font-size: 13px;
 }
 
 h1 {
-    font-size: clamp(32px, 8vw, 52px);
-    line-height: 1.05;
-    margin: 18px 0 14px;
+    font-size: clamp(42px, 9vw, 76px);
+    line-height: 1;
+    margin: 22px 0 15px;
+    letter-spacing: -3px;
 }
 
-h2 {
-    margin-top: 36px;
-    font-size: 24px;
+.hero h1 span {
+    color: #ff4d4d;
 }
 
-.subtitle {
+.hero-sub {
+    max-width: 650px;
+    margin: auto;
     color: #aaa;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-.price-box {
-    margin: 28px 0;
-    padding: 20px;
-    background: #0d0d0d;
+.product {
+    margin: 20px auto 0;
+    max-width: 700px;
+    background: rgba(20,20,20,.9);
     border: 1px solid #333;
-    border-radius: 16px;
+    border-radius: 22px;
+    padding: 32px;
+    text-align: left;
+}
+
+.product-label {
+    color: #ff6b6b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.product h2 {
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.product-description {
+    color: #aaa;
 }
 
 .price {
-    font-size: 42px;
+    font-size: 48px;
     font-weight: bold;
+    margin-top: 22px;
 }
 
-.price-sub {
-    color: #888;
+.price small {
     font-size: 14px;
+    color: #888;
+    font-weight: normal;
 }
 
 .button {
     display: block;
-    width: 100%;
     text-align: center;
-    background: #f2f2f2;
+    background: #eeeeee;
     color: #111;
     text-decoration: none;
     padding: 17px;
-    border-radius: 13px;
+    border-radius: 12px;
     font-weight: bold;
-    margin-top: 18px;
-    transition: .2s;
+    margin-top: 22px;
 }
 
 .button:hover {
-    transform: translateY(-2px);
+    background: #ffffff;
+}
+
+section {
+    padding: 55px 0;
+}
+
+.section-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.section-sub {
+    color: #888;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 18px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 25px;
 }
 
-.item {
-    background: #101010;
+.card {
+    background: #131313;
     border: 1px solid #292929;
-    border-radius: 13px;
-    padding: 14px;
-    color: #ccc;
+    border-radius: 15px;
+    padding: 20px;
 }
 
-.preview {
-    background: #0b0b0b;
-    border: 1px solid #292929;
-    border-radius: 14px;
-    padding: 18px;
-    margin-top: 16px;
+.card strong {
+    display: block;
+    margin-bottom: 5px;
 }
 
-.preview-title {
-    color: #eee;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.code {
-    color: #aaa;
-    font-family: monospace;
-    font-size: 13px;
-    white-space: pre-wrap;
-}
-
-.note {
-    margin-top: 28px;
-    padding: 16px;
-    background: #101010;
-    border-radius: 12px;
-    color: #999;
+.card p {
+    margin: 0;
+    color: #888;
     font-size: 14px;
 }
 
-.footer {
-    text-align: center;
-    color: #666;
-    font-size: 13px;
-    margin-top: 30px;
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
 }
 
-@media (max-width: 520px) {
-    .card {
-        padding: 22px 16px;
+.step-number {
+    font-size: 13px;
+    color: #ff6565;
+    font-weight: bold;
+}
+
+.note {
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 15px;
+    padding: 20px;
+    color: #999;
+}
+
+footer {
+    border-top: 1px solid #222;
+    padding: 35px 0 50px;
+    color: #666;
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    .hero {
+        padding-top: 50px;
     }
 
-    .grid {
+    .grid,
+    .steps {
         grid-template-columns: 1fr;
+    }
+
+    .product {
+        padding: 24px;
+    }
+
+    h1 {
+        letter-spacing: -2px;
     }
 }
 </style>
@@ -168,154 +228,188 @@ h2 {
 
 <div class="container">
 
-<div class="card">
+<nav>
+    <div class="logo">HORROR<span>FORGE</span> AI</div>
+    <a class="nav-link" href="#product">Product</a>
+</nav>
 
-<span class="badge">HORROR GAME DEVELOPMENT</span>
+<main>
 
-<h1>👻 Horror AI Prompt Kit</h1>
+<section class="hero">
 
-<p class="subtitle">
-ชุด Prompt สำหรับใช้ AI ช่วยออกแบบเกม Horror
-ตั้งแต่ Enemy AI ไปจนถึง Boss และ Level Design
-</p>
+    <span class="badge">AI TOOLS FOR HORROR GAME DEVELOPERS</span>
 
-<div class="price-box">
+    <h1>
+        Build smarter.<br>
+        <span>Design darker.</span>
+    </h1>
 
-<div class="price">฿69</div>
+    <p class="hero-sub">
+        Practical AI-assisted tools for indie developers,
+        game designers, and creators building horror games.
+    </p>
 
-<div class="price-sub">
-ซื้อครั้งเดียว · Digital Product · ไม่มีสินค้าจัดส่ง
-</div>
+    <div class="product" id="product">
 
-<a class="button" href="#buy">
-🛒 ดูวิธีซื้อ
-</a>
+        <div class="product-label">PRODUCT 01</div>
 
-</div>
+        <h2>👻 Horror AI Prompt Kit</h2>
 
-<h2>📦 คุณจะได้รับอะไร?</h2>
+        <p class="product-description">
+            80 structured AI prompts for designing enemies,
+            horror events, environments, gameplay systems,
+            psychological horror, levels, and bosses.
+        </p>
 
-<div class="grid">
+        <div class="price">
+            ฿69 <small>one-time purchase</small>
+        </div>
 
-<div class="item">👹 10 Enemy AI Prompts</div>
-<div class="item">🚪 10 Horror Event Prompts</div>
-<div class="item">🏥 10 Environment Prompts</div>
-<div class="item">🎮 10 Gameplay Prompts</div>
-<div class="item">🧠 10 Psychological Horror</div>
-<div class="item">🗺️ 10 Level Design Prompts</div>
-<div class="item">💀 10 Boss Design Prompts</div>
-<div class="item">🎁 10 Bonus Game Generators</div>
+        <a class="button"
+           href="https://line.me/ti/p/C6QxzBBcSb"
+           target="_blank"
+           rel="noopener">
+            🛒 Get the Horror AI Prompt Kit
+        </a>
 
-</div>
+    </div>
 
-<h2>🧠 ไม่ใช่แค่ Prompt สุ่มไอเดีย</h2>
+</section>
 
-<p class="subtitle">
-แต่ละ Prompt ถูกออกแบบให้ AI คิดเป็นระบบมากขึ้น
-เช่น State Machine, Detection, Memory, Counterplay,
-Balancing, Pseudocode และ Gameplay Scenario
-</p>
+<section>
 
-<h2>🔎 ตัวอย่าง</h2>
+    <h2 class="section-title">What's inside?</h2>
 
-<div class="preview">
+    <p class="section-sub">
+        80 prompts organized into practical horror-game development categories.
+    </p>
 
-<div class="preview-title">
-Adaptive Escape Hunter
-</div>
+    <div class="grid">
 
-<div class="code">Create a practical enemy AI system
-that learns the player's preferred
-escape routes.
+        <div class="card">
+            <strong>👁 Enemy AI</strong>
+            <p>Adaptive enemies, tracking, memory, hiding, sound detection and prediction.</p>
+        </div>
 
-Define:
+        <div class="card">
+            <strong>🕯 Horror Events</strong>
+            <p>Environmental events, audio tension, unexplained changes and encounters.</p>
+        </div>
 
-- Detection system
-- Memory system
-- Behavior states
-- Decision logic
-- Player counterplay
-- Pseudocode
-- Balance parameters
-- Example encounter</div>
+        <div class="card">
+            <strong>🏚 Environment</strong>
+            <p>Horror locations, exploration, lighting, sound and environmental storytelling.</p>
+        </div>
 
-</div>
+        <div class="card">
+            <strong>🎮 Gameplay</strong>
+            <p>Survival systems, resources, risk/reward, sound, light and player decisions.</p>
+        </div>
 
-<div class="preview">
+        <div class="card">
+            <strong>🧠 Psychological Horror</strong>
+            <p>Unreliable memory, contradictions, uncertainty and reality-based horror.</p>
+        </div>
 
-<div class="preview-title">
-Sound Tracking Predator
-</div>
+        <div class="card">
+            <strong>🗺 Level Design</strong>
+            <p>Routes, shortcuts, tension curves, exploration and progression.</p>
+        </div>
 
-<div class="code">Design an enemy that hunts using sound.
+        <div class="card">
+            <strong>👹 Boss Design</strong>
+            <p>Multi-phase encounters, survival bosses, environmental bosses and weaknesses.</p>
+        </div>
 
-Define different noise sources,
-detection radius, investigation behavior,
-false sounds, player counterplay,
-and anti-frustration safeguards.</div>
+        <div class="card">
+            <strong>🎁 10 Bonus Generators</strong>
+            <p>Generate complete indie horror-game concepts from scratch.</p>
+        </div>
 
-</div>
+    </div>
 
-<h2>🎮 เหมาะกับใคร?</h2>
+</section>
 
-<ul class="subtitle">
-<li>Indie Game Developers</li>
-<li>Game Designers</li>
-<li>Unity Developers</li>
-<li>Godot Developers</li>
-<li>Unreal Developers</li>
-<li>คนที่ใช้ AI ช่วยสร้างเกม</li>
-</ul>
+<section>
 
-<h2>⚙️ ใช้กับอะไรได้บ้าง?</h2>
+    <h2 class="section-title">Made for creators</h2>
 
-<div class="grid">
+    <div class="grid">
 
-<div class="item">Unity</div>
-<div class="item">Unreal Engine</div>
-<div class="item">Godot</div>
-<div class="item">PC / Mobile / Console</div>
+        <div class="card">
+            <strong>Unity Developers</strong>
+            <p>Turn AI-generated designs into practical gameplay systems.</p>
+        </div>
 
-</div>
+        <div class="card">
+            <strong>Godot Developers</strong>
+            <p>Use the prompts for lightweight indie horror projects.</p>
+        </div>
 
-<h2>📁 ไฟล์ที่ได้รับ</h2>
+        <div class="card">
+            <strong>Unreal Developers</strong>
+            <p>Explore deeper AI, level and encounter design ideas.</p>
+        </div>
 
-<p class="subtitle">
-ไฟล์ ZIP ขนาดเล็ก เปิดอ่านได้ทันที
-ภายในประกอบด้วย README และไฟล์ Prompt แยกตามหมวดหมู่
-พร้อม Bonus Game Idea Generators
-</p>
+        <div class="card">
+            <strong>Indie Game Designers</strong>
+            <p>Use structured prompts instead of starting from a blank page.</p>
+        </div>
 
-<h2 id="buy">🛒 วิธีซื้อ</h2>
+    </div>
 
-<div class="note">
+</section>
 
-ตอนนี้ระบบชำระเงินอัตโนมัติยังไม่ได้เปิด
+<section>
 
-หากต้องการซื้อ ให้ติดต่อผู้ขายก่อน
-จากนั้นจะได้รับรายละเอียดการชำระเงินและวิธีรับไฟล์
+    <h2 class="section-title">How it works</h2>
 
-</div>
+    <div class="steps">
 
-<a class="button" href="https://line.me/ti/p/C6QxzBBcSb" target="_blank" rel="noopener">
-📩 ติดต่อเพื่อสั่งซื้อ
-</a>
+        <div class="card">
+            <div class="step-number">01</div>
+            <strong>Buy</strong>
+            <p>Contact HorrorForge AI through LINE and complete the payment.</p>
+        </div>
 
-<div class="note">
+        <div class="card">
+            <div class="step-number">02</div>
+            <strong>Receive</strong>
+            <p>After payment is confirmed, receive the digital ZIP file.</p>
+        </div>
 
-<strong>Digital Product</strong><br>
-สินค้านี้เป็นไฟล์ดิจิทัล ไม่มีการจัดส่งสินค้าแบบพัสดุ
+        <div class="card">
+            <div class="step-number">03</div>
+            <strong>Create</strong>
+            <p>Choose a prompt, customize the settings and start designing.</p>
+        </div>
 
-หลังตรวจสอบการชำระเงินแล้ว
-ผู้ขายจะส่งไฟล์ ZIP ให้ตามช่องทางที่ตกลงกัน
+    </div>
 
-</div>
+</section>
 
-<div class="footer">
-Horror AI Prompt Kit · Product Edition 1.0
-</div>
+<section>
 
-</div>
+    <div class="note">
+        <strong>Digital Product</strong><br><br>
+        This is a digital product. No physical item will be shipped.
+        Payment and delivery instructions are provided through LINE.
+    </div>
+
+    <a class="button"
+       href="https://line.me/ti/p/C6QxzBBcSb"
+       target="_blank"
+       rel="noopener">
+        📩 Contact HorrorForge AI
+    </a>
+
+</section>
+
+</main>
+
+<footer>
+    HorrorForge AI · Horror AI Prompt Kit · Product Edition 1.0
+</footer>
 
 </div>
 
