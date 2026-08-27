@@ -227,39 +227,6 @@ footer {
 </style>
 
 <style>
-#language-switcher {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 6px;
-    width: 100%;
-    margin: 0 0 14px 0;
-    padding: 6px 0;
-    position: relative;
-    z-index: 100;
-}
-
-#language-switcher button {
-    border: 1px solid #555;
-    background: #111;
-    color: #aaa;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 13px;
-    padding: 5px 9px;
-    border-radius: 6px;
-}
-
-#language-switcher button.active {
-    color: #fff;
-    border-color: #aaa;
-    background: #222;
-}
-
-#language-switcher span {
-    color: #777;
-}
-
 #language-switcher button {
     border: 0;
     background: transparent;
@@ -285,11 +252,7 @@ footer {
 <div class="container">
 
 
-<div id="language-switcher">
-    <button onclick="setLanguage('en')" id="en-btn">EN</button>
-    <span>|</span>
-    <button onclick="setLanguage('th')" id="th-btn">TH</button>
-</div>
+
 
 <nav>
     <div class="logo">HORROR<span>FORGE</span> AI</div>
@@ -490,35 +453,7 @@ footer {
 
 
 
-<script>
-function setLanguage(lang) {
-    document.documentElement.lang = lang;
 
-    document.querySelectorAll("[data-en][data-th]").forEach(el => {
-        const value = el.getAttribute("data-" + lang);
-
-        if (el.tagName === "H1" && value.includes("|")) {
-            const parts = value.split("|");
-            el.innerHTML = parts[0] + "<br><span>" + parts[1] + "</span>";
-        } else {
-            el.textContent = value;
-        }
-    });
-
-    const en = document.getElementById("en-btn");
-    const th = document.getElementById("th-btn");
-
-    if (en) en.classList.toggle("active", lang === "en");
-    if (th) th.classList.toggle("active", lang === "th");
-
-    localStorage.setItem("horrorforge-language", lang);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const saved = localStorage.getItem("horrorforge-language") || "en";
-    setLanguage(saved);
-});
-</script>
 
 </body>
 </html>
