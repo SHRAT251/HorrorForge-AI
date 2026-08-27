@@ -228,15 +228,36 @@ footer {
 
 <style>
 #language-switcher {
-    position: relative;
     display: flex;
     justify-content: flex-end;
-    gap: 7px;
     align-items: center;
-    font-size: 13px;
-    margin-bottom: 18px;
+    gap: 6px;
     width: 100%;
-    z-index: 10;
+    margin: 0 0 14px 0;
+    padding: 6px 0;
+    position: relative;
+    z-index: 100;
+}
+
+#language-switcher button {
+    border: 1px solid #555;
+    background: #111;
+    color: #aaa;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 5px 9px;
+    border-radius: 6px;
+}
+
+#language-switcher button.active {
+    color: #fff;
+    border-color: #aaa;
+    background: #222;
+}
+
+#language-switcher span {
+    color: #777;
 }
 
 #language-switcher button {
