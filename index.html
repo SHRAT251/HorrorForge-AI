@@ -221,12 +221,54 @@ footer {
         letter-spacing: -2px;
     }
 }
+
+
+
 </style>
+
+<style>
+#language-switcher {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    gap: 7px;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 18px;
+    width: 100%;
+    z-index: 10;
+}
+
+#language-switcher button {
+    border: 0;
+    background: transparent;
+    color: #777;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+}
+
+#language-switcher button.active {
+    color: #fff;
+}
+
+#language-switcher span {
+    color: #444;
+}
+</style>
+
 </head>
 
 <body>
 
 <div class="container">
+
+
+<div id="language-switcher">
+    <button onclick="setLanguage('en')" id="en-btn">EN</button>
+    <span>|</span>
+    <button onclick="setLanguage('th')" id="th-btn">TH</button>
+</div>
 
 <nav>
     <div class="logo">HORROR<span>FORGE</span> AI</div>
@@ -237,14 +279,14 @@ footer {
 
 <section class="hero">
 
-    <span class="badge">AI TOOLS FOR HORROR GAME DEVELOPERS</span>
+    <span class="badge" data-en="AI TOOLS FOR HORROR GAME DEVELOPERS" data-th="เครื่องมือ AI สำหรับนักพัฒนาเกมสยองขวัญ">AI TOOLS FOR HORROR GAME DEVELOPERS</span>
 
-    <h1>
+    <h1 data-en="Build smarter.|Design darker." data-th="สร้างให้ฉลาดขึ้น.|ออกแบบให้หลอนขึ้น.">
         Build smarter.<br>
         <span>Design darker.</span>
     </h1>
 
-    <p class="hero-sub">
+    <p class="hero-sub" data-en="Practical AI-assisted tools for indie developers, game designers, and creators building horror games." data-th="เครื่องมือที่ใช้ AI ช่วยสำหรับนักพัฒนาอินดี้ นักออกแบบเกม และครีเอเตอร์ที่กำลังสร้างเกมสยองขวัญ">
         Practical AI-assisted tools for indie developers,
         game designers, and creators building horror games.
     </p>
@@ -253,23 +295,24 @@ footer {
 
         <div class="product-label">PRODUCT 01</div>
 
-        <h2>👻 Horror AI Prompt Kit</h2>
+        <h2 data-en="👻 Horror AI Prompt Kit" data-th="👻 Horror AI Prompt Kit">👻 Horror AI Prompt Kit</h2>
 
-        <p class="product-description">
+        <p class="product-description" data-en="80 structured AI prompts for designing enemies, horror events, environments, gameplay systems, psychological horror, levels, and bosses." data-th="AI Prompt จำนวน 80 รายการที่จัดโครงสร้างไว้สำหรับออกแบบศัตรู เหตุการณ์สยอง สภาพแวดล้อม ระบบเกม Psychological Horror ด่าน และบอส">
             80 structured AI prompts for designing enemies,
             horror events, environments, gameplay systems,
             psychological horror, levels, and bosses.
         </p>
 
         <div class="price">
-            ฿69 <small>one-time purchase</small>
+            ฿69 <small data-en="one-time purchase" data-th="ซื้อครั้งเดียว">one-time purchase</small>
         </div>
 
         <a class="button"
            href="https://line.me/ti/p/C6QxzBBcSb"
            target="_blank"
            rel="noopener">
-            🛒 Get the Horror AI Prompt Kit
+            <span data-en="🛒 Get the Horror AI Prompt Kit"
+                  data-th="🛒 รับ Horror AI Prompt Kit">🛒 Get the Horror AI Prompt Kit</span>
         </a>
 
     </div>
@@ -278,52 +321,52 @@ footer {
 
 <section>
 
-    <h2 class="section-title">What's inside?</h2>
+    <h2 class="section-title" data-en="What's inside?" data-th="ภายในมีอะไรบ้าง?">What's inside?</h2>
 
-    <p class="section-sub">
+    <p class="section-sub" data-en="80 prompts organized into practical horror-game development categories." data-th="80 Prompt ที่จัดหมวดหมู่สำหรับการพัฒนาเกมสยองขวัญอย่างเป็นระบบ">
         80 prompts organized into practical horror-game development categories.
     </p>
 
     <div class="grid">
 
         <div class="card">
-            <strong>👁 Enemy AI</strong>
-            <p>Adaptive enemies, tracking, memory, hiding, sound detection and prediction.</p>
+            <strong data-en="👁 Enemy AI" data-th="👁 AI ศัตรู">👁 Enemy AI</strong>
+            <p data-en="Adaptive enemies, tracking, memory, hiding, sound detection and prediction." data-th="ศัตรูที่ปรับตัว การติดตาม ความจำ การซ่อน การตรวจจับเสียง และการคาดการณ์">Adaptive enemies, tracking, memory, hiding, sound detection and prediction.</p>
         </div>
 
         <div class="card">
-            <strong>🕯 Horror Events</strong>
-            <p>Environmental events, audio tension, unexplained changes and encounters.</p>
+            <strong data-en="🕯 Horror Events" data-th="🕯 เหตุการณ์สยองขวัญ">🕯 Horror Events</strong>
+            <p data-en="Environmental events, audio tension, unexplained changes and encounters." data-th="เหตุการณ์ในสภาพแวดล้อม ความตึงเครียดจากเสียง การเปลี่ยนแปลงที่อธิบายไม่ได้ และการเผชิญหน้า">Environmental events, audio tension, unexplained changes and encounters.</p>
         </div>
 
         <div class="card">
-            <strong>🏚 Environment</strong>
-            <p>Horror locations, exploration, lighting, sound and environmental storytelling.</p>
+            <strong data-en="🏚 Environment" data-th="🏚 สภาพแวดล้อม">🏚 Environment</strong>
+            <p data-en="Horror locations, exploration, lighting, sound and environmental storytelling." data-th="สถานที่สยองขวัญ การสำรวจ แสง เสียง และการเล่าเรื่องผ่านสภาพแวดล้อม">Horror locations, exploration, lighting, sound and environmental storytelling.</p>
         </div>
 
         <div class="card">
-            <strong>🎮 Gameplay</strong>
-            <p>Survival systems, resources, risk/reward, sound, light and player decisions.</p>
+            <strong data-en="🎮 Gameplay" data-th="🎮 ระบบการเล่น">🎮 Gameplay</strong>
+            <p data-en="Survival systems, resources, risk/reward, sound, light and player decisions." data-th="ระบบเอาชีวิตรอด ทรัพยากร ความเสี่ยงและผลตอบแทน เสียง แสง และการตัดสินใจของผู้เล่น">Survival systems, resources, risk/reward, sound, light and player decisions.</p>
         </div>
 
         <div class="card">
-            <strong>🧠 Psychological Horror</strong>
-            <p>Unreliable memory, contradictions, uncertainty and reality-based horror.</p>
+            <strong data-en="🧠 Psychological Horror" data-th="🧠 Psychological Horror">🧠 Psychological Horror</strong>
+            <p data-en="Unreliable memory, contradictions, uncertainty and reality-based horror." data-th="ความทรงจำที่ไม่น่าเชื่อถือ ความขัดแย้ง ความไม่แน่นอน และความสยองที่อิงกับความเป็นจริง">Unreliable memory, contradictions, uncertainty and reality-based horror.</p>
         </div>
 
         <div class="card">
-            <strong>🗺 Level Design</strong>
-            <p>Routes, shortcuts, tension curves, exploration and progression.</p>
+            <strong data-en="🗺 Level Design" data-th="🗺 การออกแบบด่าน">🗺 Level Design</strong>
+            <p data-en="Routes, shortcuts, tension curves, exploration and progression." data-th="เส้นทาง ทางลัด ระดับความตึงเครียด การสำรวจ และความก้าวหน้าของเกม">Routes, shortcuts, tension curves, exploration and progression.</p>
         </div>
 
         <div class="card">
-            <strong>👹 Boss Design</strong>
-            <p>Multi-phase encounters, survival bosses, environmental bosses and weaknesses.</p>
+            <strong data-en="👹 Boss Design" data-th="👹 การออกแบบบอส">👹 Boss Design</strong>
+            <p data-en="Multi-phase encounters, survival bosses, environmental bosses and weaknesses." data-th="การต่อสู้หลายช่วง บอสเอาชีวิตรอด บอสที่ใช้สภาพแวดล้อม และจุดอ่อน">Multi-phase encounters, survival bosses, environmental bosses and weaknesses.</p>
         </div>
 
         <div class="card">
-            <strong>🎁 10 Bonus Generators</strong>
-            <p>Generate complete indie horror-game concepts from scratch.</p>
+            <strong data-en="🎁 10 Bonus Generators" data-th="🎁 ตัวสร้างไอเดียโบนัส 10 รายการ">🎁 10 Bonus Generators</strong>
+            <p data-en="Generate complete indie horror-game concepts from scratch." data-th="สร้างคอนเซปต์เกมสยองขวัญอินดี้แบบครบชุดตั้งแต่เริ่มต้น">Generate complete indie horror-game concepts from scratch.</p>
         </div>
 
     </div>
@@ -332,28 +375,28 @@ footer {
 
 <section>
 
-    <h2 class="section-title">Made for creators</h2>
+    <h2 class="section-title" data-en="Made for creators" data-th="สร้างมาเพื่อครีเอเตอร์">Made for creators</h2>
 
     <div class="grid">
 
         <div class="card">
-            <strong>Unity Developers</strong>
-            <p>Turn AI-generated designs into practical gameplay systems.</p>
+            <strong data-en="Unity Developers" data-th="นักพัฒนา Unity">Unity Developers</strong>
+            <p data-en="Turn AI-generated designs into practical gameplay systems." data-th="เปลี่ยนการออกแบบจาก AI ให้เป็นระบบการเล่นที่ใช้งานได้จริง">Turn AI-generated designs into practical gameplay systems.</p>
         </div>
 
         <div class="card">
-            <strong>Godot Developers</strong>
-            <p>Use the prompts for lightweight indie horror projects.</p>
+            <strong data-en="Godot Developers" data-th="นักพัฒนา Godot">Godot Developers</strong>
+            <p data-en="Use the prompts for lightweight indie horror projects." data-th="ใช้ Prompt เหล่านี้กับโปรเจกต์เกมสยองขวัญอินดี้ขนาดเล็ก">Use the prompts for lightweight indie horror projects.</p>
         </div>
 
         <div class="card">
-            <strong>Unreal Developers</strong>
-            <p>Explore deeper AI, level and encounter design ideas.</p>
+            <strong data-en="Unreal Developers" data-th="นักพัฒนา Unreal">Unreal Developers</strong>
+            <p data-en="Explore deeper AI, level and encounter design ideas." data-th="สำรวจแนวคิดเชิงลึกด้าน AI การออกแบบด่าน และการออกแบบการเผชิญหน้า">Explore deeper AI, level and encounter design ideas.</p>
         </div>
 
         <div class="card">
-            <strong>Indie Game Designers</strong>
-            <p>Use structured prompts instead of starting from a blank page.</p>
+            <strong data-en="Indie Game Designers" data-th="นักออกแบบเกมอินดี้">Indie Game Designers</strong>
+            <p data-en="Use structured prompts instead of starting from a blank page." data-th="ใช้ Prompt ที่มีโครงสร้างแทนการเริ่มต้นจากหน้าว่าง">Use structured prompts instead of starting from a blank page.</p>
         </div>
 
     </div>
@@ -362,26 +405,26 @@ footer {
 
 <section>
 
-    <h2 class="section-title">How it works</h2>
+    <h2 class="section-title" data-en="How it works" data-th="วิธีการทำงาน">How it works</h2>
 
     <div class="steps">
 
         <div class="card">
             <div class="step-number">01</div>
-            <strong>Buy</strong>
-            <p>Contact HorrorForge AI through LINE and complete the payment.</p>
+            <strong data-en="Buy" data-th="ซื้อ">Buy</strong>
+            <p data-en="Contact HorrorForge AI through LINE and complete the payment." data-th="ติดต่อ HorrorForge AI ผ่าน LINE และดำเนินการชำระเงิน">Contact HorrorForge AI through LINE and complete the payment.</p>
         </div>
 
         <div class="card">
             <div class="step-number">02</div>
-            <strong>Receive</strong>
-            <p>After payment is confirmed, receive the digital ZIP file.</p>
+            <strong data-en="Receive" data-th="รับสินค้า">Receive</strong>
+            <p data-en="After payment is confirmed, receive the digital ZIP file." data-th="หลังยืนยันการชำระเงินแล้ว จะได้รับไฟล์ ZIP ดิจิทัล">After payment is confirmed, receive the digital ZIP file.</p>
         </div>
 
         <div class="card">
             <div class="step-number">03</div>
-            <strong>Create</strong>
-            <p>Choose a prompt, customize the settings and start designing.</p>
+            <strong data-en="Create" data-th="สร้าง">Create</strong>
+            <p data-en="Choose a prompt, customize the settings and start designing." data-th="เลือก Prompt ปรับแต่งการตั้งค่า แล้วเริ่มออกแบบ">Choose a prompt, customize the settings and start designing.</p>
         </div>
 
     </div>
@@ -391,16 +434,25 @@ footer {
 <section>
 
     <div class="note">
-        <strong>Digital Product</strong><br><br>
-        This is a digital product. No physical item will be shipped.
-        Payment and delivery instructions are provided through LINE.
+        <strong data-en="Digital Product" data-th="สินค้าดิจิทัล">Digital Product</strong><br><br>
+        <span
+            data-en="This is a digital product. No physical item will be shipped."
+            data-th="สินค้านี้เป็นสินค้าดิจิทัล ไม่มีการจัดส่งสินค้าแบบพัสดุ">
+            This is a digital product. No physical item will be shipped.
+        </span><br>
+        <span
+            data-en="Payment and delivery instructions are provided through LINE."
+            data-th="รายละเอียดการชำระเงินและการรับสินค้าจะดำเนินการผ่าน LINE">
+            Payment and delivery instructions are provided through LINE.
+        </span>
     </div>
 
     <a class="button"
        href="https://line.me/ti/p/C6QxzBBcSb"
        target="_blank"
        rel="noopener">
-        📩 Contact HorrorForge AI
+        <span data-en="📩 Contact HorrorForge AI"
+              data-th="📩 ติดต่อ HorrorForge AI">📩 Contact HorrorForge AI</span>
     </a>
 
 </section>
@@ -412,6 +464,40 @@ footer {
 </footer>
 
 </div>
+
+
+
+
+
+<script>
+function setLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-en][data-th]").forEach(el => {
+        const value = el.getAttribute("data-" + lang);
+
+        if (el.tagName === "H1" && value.includes("|")) {
+            const parts = value.split("|");
+            el.innerHTML = parts[0] + "<br><span>" + parts[1] + "</span>";
+        } else {
+            el.textContent = value;
+        }
+    });
+
+    const en = document.getElementById("en-btn");
+    const th = document.getElementById("th-btn");
+
+    if (en) en.classList.toggle("active", lang === "en");
+    if (th) th.classList.toggle("active", lang === "th");
+
+    localStorage.setItem("horrorforge-language", lang);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("horrorforge-language") || "en";
+    setLanguage(saved);
+});
+</script>
 
 </body>
 </html>
